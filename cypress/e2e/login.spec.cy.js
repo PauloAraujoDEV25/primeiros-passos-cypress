@@ -1,3 +1,5 @@
+import userData from '../fixtures/users/user-data.json'
+
 describe('Orange HRM Test', () => {
 
   const selectorsList = {
@@ -6,17 +8,6 @@ describe('Orange HRM Test', () => {
     loginButton: "[type='submit']",
     dashboardGrid: ".orangehrm-dashboard-grid",
     wrongCredentialAlert: "[role='alert']"
-  }
-
-  const userData = {
-    userSucess: {
-      username : "Admin",
-      password: "admin123"
-    },
-    userFail: {
-      username: "test",
-      password: "test"
-    }
   }
 
   it('Login - Sucess', () => {
@@ -35,5 +26,5 @@ describe('Orange HRM Test', () => {
     cy.get(selectorsList.loginButton).click();
     cy.get(selectorsList.wrongCredentialAlert);
   })
-  
+
 })
