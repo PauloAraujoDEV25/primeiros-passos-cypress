@@ -4,7 +4,7 @@ describe('Orange HRM Test', () => {
     usernameField: "[name='username']",
     passwordField: "[name='password']",
     loginButton: "[type='submit']",
-    dashboardGrid: ".orangehrm-dashboard-grid .orangehrm-dashboard-widget",
+    dashboardGrid: ".orangehrm-dashboard-grid",
     wrongCredentialAlert: "[role='alert']"
   }
 
