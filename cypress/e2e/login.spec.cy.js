@@ -4,7 +4,7 @@ describe('Orange HRM Test', () => {
     usernameField: "[name='username']",
     passwordField: "[name='password']",
     loginButton: "[type='submit']",
-    sectionTitleTopBar: ".oxd-topbar-header-breadcrumb-module",
+    dashboardGrid: ".orangehrm-dashboard-grid .orangehrm-dashboard-widget",
     wrongCredentialAlert: "[role='alert']"
   }
 
@@ -14,7 +14,7 @@ describe('Orange HRM Test', () => {
     cy.get(selectorsList.passwordField).type('admin123');
     cy.get(selectorsList.loginButton).click();
     cy.location('pathname').should('equal', '/web/index.php/dashboard/index');
-    cy.get(selectorsList.sectionTitleTopBar).contains('Dashboard');
+    cy.get(selectorsList.dashboardGrid);
   })
 
   it('Login - Fail', () => {
