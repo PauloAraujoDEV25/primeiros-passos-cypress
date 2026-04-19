@@ -14,7 +14,7 @@ describe('Orange HRM Test', () => {
     genericField: ".oxd-input--active",
     dateField: "[placeholder='yyyy-dd-mm']",
     genericComboBox: ".oxd-select-text--arrow",
-    secondItemComboBo: ".oxd-select-dropdown > :nth-child(2)",
+    secondItemComboBox: ".oxd-select-dropdown > :nth-child(2)",
     thirdItemComboBox: ".oxd-select-dropdown > :nth-child(3)"
   }
 
@@ -35,7 +35,7 @@ describe('Orange HRM Test', () => {
     cy.get('.oxd-toast-close');
 
     cy.get(selectorsList.genericComboBox).eq(1).click({force: true});
-    cy.get(selectorsList.secondItemComboBo).click();
+    cy.get(selectorsList.secondItemComboBox).click();
     cy.get(selectorsList.genericComboBox).eq(2).click({force: true});
     cy.get(selectorsList.thirdItemComboBox).click();
    
