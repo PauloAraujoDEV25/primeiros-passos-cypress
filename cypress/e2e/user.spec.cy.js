@@ -13,8 +13,9 @@ describe('Orange HRM Test', () => {
     lastNameField: "[name='lastName']",
     genericField: ".oxd-input--active",
     dateField: "[placeholder='yyyy-dd-mm']",
-    saveField: "[type='submit']"
-    
+    genericComboBox: ".oxd-select-text--arrow",
+    secondItemComboBo: ".oxd-select-dropdown > :nth-child(2)",
+    thirdItemComboBox: ".oxd-select-dropdown > :nth-child(3)"
   }
 
   it.only('Login - Sucess', () => {
@@ -31,10 +32,16 @@ describe('Orange HRM Test', () => {
     cy.get(selectorsList.genericField).eq(4).clear().type('OtherIdTest');
     cy.get(selectorsList.genericField).eq(5).clear().type('1234456');
     cy.get(selectorsList.dateField).eq(0).clear().type('2026-10-26{enter}');
-    cy.get(selectorsList.saveField).eq(0).click();
+    cy.get('.oxd-toast-close');
+
+    cy.get(selectorsList.genericComboBox).eq(1).click({force: true});
+    cy.get(selectorsList.secondItemComboBo).click();
+    cy.get(selectorsList.genericComboBox).eq(2).click({force: true});
+    cy.get(selectorsList.thirdItemComboBox).click();
+   
   })
 
-  it('Login - Fail', () => {w
+  it('Login - Fail', () => {
     cy.visit('/auth/login');
     cy.get(selectorsList.usernameField).type(userData.userFail.username);
     cy.get(selectorsList.passwordField).type(userData.userFail.password);
